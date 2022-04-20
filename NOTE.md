@@ -11,8 +11,7 @@
 
 3.  add the following dependencies to the project
 
-    yarn add express http-status-code pino
-    @typegoose/typegoose mongoose express-async-errors zod zod-express-middleware argon2 jsonwebtoken cookie-parser mongoose-slug-generator nanoid busboy cors helmet @mantine/form
+    yarn add express http-status-code pino @typegoose/typegoose mongoose express-async-errors zod zod-express-middleware argon2 jsonwebtoken cookie-parser mongoose-slug-generator nanoid busboy cors helmet @mantine/form
 
 4 add the development dependencies to the project
 

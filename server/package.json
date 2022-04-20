@@ -8,7 +8,7 @@
     "@mantine/form": "^4.1.4",
     "@typegoose/typegoose": "^9.8.0",
     "argon2": "^0.28.5",
-    "busboy": "^1.5.0",
+    "busboy": "^1.6.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.17.3",
