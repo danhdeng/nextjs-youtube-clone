@@ -6,6 +6,7 @@ import { CORS_ORIGIN } from './constants';
 import { connectToDatbase, disconnectFromDatabase } from './utils/database';
 import { logger } from './utils/logger';
 import userRoute from './modules/user/user.route';
+import authRoute from './modules/auth/auth.route';
 const PORT = process.env.PORT || 4400;
 
 const app = express();
@@ -21,9 +22,12 @@ app.use(
 
 app.use(helmet());
 
-//add user rounte
+//add user route
 app.use('/api/users', userRoute);
 
+//add user authentication route
+
+app.use('/api/auth', authRoute);
 const server = app.listen(PORT, async () => {
   await connectToDatbase();
   logger.info(`Server is running at http://localhost:${PORT}`);

@@ -12,8 +12,7 @@ export function signJwt(payload: string | Buffer | object) {
 
 export function verify(token: string) {
   try {
-    const decoded = jwt.verify(token, JWT_SECRET_KEY);
-    return decoded;
+    return jwt.verify(token, JWT_SECRET_KEY);
   } catch (e) {
     return null;
   }
