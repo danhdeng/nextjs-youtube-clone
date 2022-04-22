@@ -3,7 +3,12 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { Video } from './video.model';
 import { UpdateVideoBody, UpdateVideoParams } from './video.schema';
-import { createVideo, findVideo, findVideos } from './video.service';
+import {
+  createVideo,
+  deleteVideo,
+  findVideo,
+  findVideos,
+} from './video.service';
 import fs from 'fs';
 
 const MIME_TYPES = ['vide/mp4'];
@@ -29,6 +34,7 @@ export async function uploadVideoHandler(req: Request, res: Response) {
 
   bb.on('file', async (_: any, file: any, info: { mimeType: string }) => {
     if (!MIME_TYPES.includes(info.mimeType)) {
+      await deleteVideo(video.videoId);
       return res.status(StatusCodes.BAD_REQUEST).send('Invalid file type');
     }
     const extension = info.mimeType.split('/')[1];

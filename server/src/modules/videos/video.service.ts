@@ -8,6 +8,10 @@ export async function findVideo(videoId: Video['videoId']) {
   return VideoModel.findOne({ videoId });
 }
 
+export async function deleteVideo(videoId: Video['videoId']) {
+  return VideoModel.deleteOne({ videoId });
+}
+
 export async function findVideos() {
   return VideoModel.find({
     published: true,
