@@ -7,6 +7,7 @@ import { connectToDatbase, disconnectFromDatabase } from './utils/database';
 import { logger } from './utils/logger';
 import userRoute from './modules/user/user.route';
 import authRoute from './modules/auth/auth.route';
+import videoRoute from './modules/videos/video.route';
 import deserializeUser from './middleware/deserializeUser';
 const PORT = process.env.PORT || 4400;
 
@@ -28,8 +29,11 @@ app.use(deserializeUser);
 app.use('/api/users', userRoute);
 
 //add user authentication route
-
 app.use('/api/auth', authRoute);
+
+// add videos route
+app.use('/api/videos', videoRoute);
+
 const server = app.listen(PORT, async () => {
   await connectToDatbase();
   logger.info(`Server is running at http://localhost:${PORT}`);
