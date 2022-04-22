@@ -26,5 +26,58 @@
 
 yarn add @mantine/hooks @mantine/core @mantine/next react-query axios @mantine/notifications @mantine/dropzone tabler-icons-react
 
-3. setup Mantine for nextjs
-   https://mantine.dev/theming/next/
+3.  setup Mantine for nextjs
+    https://mantine.dev/theming/next/
+
+    1.  Create pages/\_document.tsx file:
+        import { createGetInitialProps } from '@mantine/next';
+        import Document, { Head, Html, Main, NextScript } from 'next/document';
+
+        const getInitialProps = createGetInitialProps();
+
+        export default class \_Document extends Document {
+        static getInitialProps = getInitialProps;
+
+        render() {
+        return (
+        <Html>
+        <Head />
+        <body>
+        <Main />
+        <NextScript />
+        </body>
+        </Html>
+        );
+        }
+        }
+
+    2.  (Optional) Replace your pages/\_app.tsx with
+
+        import { AppProps } from 'next/app';
+        import Head from 'next/head';
+        import { MantineProvider } from '@mantine/core';
+
+        export default function App(props: AppProps) {
+        const { Component, pageProps } = props;
+
+        return (
+        <>
+        <Head>
+        <title>Page title</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        </Head>
+
+             <MantineProvider
+                 withGlobalStyles
+                 withNormalizeCSS
+                 theme={{
+                 /** Put your mantine theme override here */
+                 colorScheme: 'light',
+                 }}
+             >
+                 <Component {...pageProps} />
+             </MantineProvider>
+             </>
+
+        );
+        }
