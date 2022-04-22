@@ -16,3 +16,15 @@
 4 add the development dependencies to the project
 
     yarn add typescript ts-node-dev pino-pretty @types/express @types/express @types/jsonwebtoken @types/cookie-parser @types/busboy @types/cors @types/http-status-code -D
+
+#Client setup
+
+1.  create a nextjs app for the client
+    yarn create next-app client --typescript
+
+2.  add dependencies to the project
+
+yarn add @mantine/hooks @mantine/core @mantine/next react-query axios @mantine/notifications @mantine/dropzone tabler-icons-react
+
+3. setup Mantine for nextjs
+   https://mantine.dev/theming/next/
