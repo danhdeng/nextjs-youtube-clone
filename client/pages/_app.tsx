@@ -15,6 +15,7 @@ import { type } from 'os';
 import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import { NotificationsProvider } from '@mantine/notifications';
+import { MeContextProvider } from '../context/me';
 
 const queryClient = new QueryClient();
 
