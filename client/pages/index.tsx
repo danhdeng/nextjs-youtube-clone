@@ -1,21 +1,21 @@
 import { SimpleGrid } from '@mantine/core';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 import { ReactElement } from 'react';
 import { VideoTeaser } from '../components/VideoTeaser';
 import { useVideo } from '../context/videos';
 import HomePageLayout from '../layout/Home';
 import styles from '../styles/Home.module.css';
+import { Video } from '../types';
 
 const Home: NextPage = () => {
-  const { videos } = useVideo();
+  const { videos, refetch } = useVideo();
   return (
     <div className={styles.container}>
       <SimpleGrid cols={3}>
-        {(videos || []).map((video) => {
-          return <VideoTeaser key={video.videoId} video={video} />;
-        })}
+        {videos &&
+          videos.map((video: Video) => {
+            return <VideoTeaser key={video.videoId} video={video} />;
+          })}
       </SimpleGrid>
     </div>
   );
