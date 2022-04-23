@@ -16,7 +16,7 @@ export function register(payload: {
   return axios.post(userBase, payload).then((res) => res.data);
 }
 
-export function Login(payload: { email: string; password: string }) {
+export function login(payload: { email: string; password: string }) {
   return axios
     .post(userBase, payload, {
       withCredentials: true,
