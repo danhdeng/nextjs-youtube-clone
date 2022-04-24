@@ -7,7 +7,7 @@ const userBase = `${base}/api/users`;
 const authBase = `${base}/api/auth`;
 const videosBase = `${base}/api/videos`;
 
-export function register(payload: {
+export function registerUser(payload: {
   username: string;
   password: string;
   email: string;

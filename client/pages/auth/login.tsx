@@ -1,4 +1,11 @@
-import { Button, Container, Paper, Stack, TextInput } from '@mantine/core';
+import {
+  Button,
+  Container,
+  Paper,
+  Stack,
+  TextInput,
+  Title,
+} from '@mantine/core';
 import { useForm } from '@mantine/hooks';
 import { AxiosError } from 'axios';
 import Head from 'next/head';
@@ -34,7 +41,7 @@ export default function LoginPage() {
         <title>Login</title>
       </Head>
       <Container>
-        <title>Login</title>
+        <Title>Login</Title>
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
           <form onSubmit={form.onSubmit((values) => mutation.mutate(values))}>
             <Stack>
