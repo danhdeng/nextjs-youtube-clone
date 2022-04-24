@@ -107,7 +107,15 @@ export default function UploadVideo() {
           >
             {(status) => {
               return (
-                <Group>
+                <Group
+                  position="center"
+                  spacing="xl"
+                  style={{
+                    minHeight: '50vh',
+                    justifyContent: 'center',
+                  }}
+                  direction="column"
+                >
                   <ArrowBigUpLine />
                   <Text>Drag video here or click to find</Text>
                 </Group>

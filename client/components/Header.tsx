@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Me } from '../types';
 import Link from 'next/link';
-import { UploadVideo } from './UploadVideo';
+import UploadVideo from './UploadVideo';
 import { useMe } from '../context/me';
 
 function HeaderLayout() {
