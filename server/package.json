@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@mantine/form": "^4.1.4",
-    "@typegoose/typegoose": "^9.8.0",
+    "@typegoose/typegoose": "^9.8.1",
     "argon2": "^0.28.5",
     "busboy": "^1.6.0",
     "cookie-parser": "^1.4.6",

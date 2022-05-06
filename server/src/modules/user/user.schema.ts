@@ -14,7 +14,7 @@ export const registerUserSchema = {
       .min(6, 'Password must be at least 6 characters long')
       .max(64, 'Password should not be longer than 64 characters'),
     confirmPassword: string({
-      required_error: 'username is required',
+      required_error: 'confirm Password is required',
     }),
   }).refine((data) => data.password === data.confirmPassword, {
     message: 'Passwords do not match',
